@@ -12,7 +12,7 @@ from reflectance_sensors import ReflectanceSensors
 
 class Sensob():
 
-    value=0
+    
 
     def __init__(self):
         self.camera_value=0
