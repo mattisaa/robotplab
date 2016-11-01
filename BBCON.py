@@ -44,5 +44,3 @@ class BBCON:
         for sensob in self.sensobs:
             sensob.sensob_reset()
 
-
-#hhhhsh
