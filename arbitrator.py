@@ -1,5 +1,5 @@
 
-from bbcon import BBCON
+from BBCON import BBCON
 from random import uniform
 
 class Arbitrator():
@@ -8,7 +8,7 @@ class Arbitrator():
         self.behaviors = None
 
     def choose_action(self, method=None):
-        self.behaviors = BBCON.active_behaviors
+        self.behaviors = BBCON.get_active_behaviors()
         if method == 0:
            return self.stochastic(self.behaviors)
         else:

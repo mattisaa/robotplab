@@ -7,7 +7,7 @@ class Motob():
         self.motors = []
         self.value = [0, 0]
 
-    def update(self, mr=None):
+    def motob_update(self, mr=None):
         if mr[0] == self.motors[0]:
             self.setMotorValue(side=0, value=mr[1])
         elif mr[1] == self.motors[1]:
