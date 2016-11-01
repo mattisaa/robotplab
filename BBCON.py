@@ -43,5 +43,3 @@ class BBCON:
         self.wait()  #??
         for sensob in self.sensobs:
             sensob.sensob_reset()
-
-
