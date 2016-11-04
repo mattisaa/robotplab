@@ -45,5 +45,5 @@ class BBCON:
         for sensob in self.sensobs:
             sensob.sensob_reset()
 
-
-    #lalal
+    def get_active_behaviors(self):
+        return self.active_behaviors
