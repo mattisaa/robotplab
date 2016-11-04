@@ -1,4 +1,5 @@
-
+from Arbitrator import Arbitrator
+from ultrasonic import *
 
 class BBCON:
 
@@ -7,7 +8,7 @@ class BBCON:
         self.active_behaviors = []
         self.sensobs = []
         self.motobs = []
-        self.arbitarator = arbitrator  # Arbitrator() objekt
+        self.arbitarator = Arbitrator()  # Arbitrator() objekt
         self.current_timestep = 0
         self.inactive_behaviors = list(set(self.behaviors) - set(self.active_behaviors))  # oppdateres i metoder?
         self.agent = None  # /robot, roboten den kontrollerer
