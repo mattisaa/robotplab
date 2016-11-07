@@ -4,7 +4,7 @@ from random import uniform
 
 class Arbitrator():
 
-<<<<<<< HEAD
+
     def __init__(self):
         self.behaviors = None
 
@@ -28,7 +28,7 @@ class Arbitrator():
 
     def deterministic(self, behaviors):
         return max(behaviors.get_value)
-=======
+
     def __init__(self, bbcon=BBCON()):
         self.bbcon = bbcon
         self.motor_recs = None
@@ -62,4 +62,4 @@ class Arbitrator():
             if behavior.weight > largest_weight:
                 largest_weight = behavior.weight
                 self.motor_recs = behavior
->>>>>>> master
+
