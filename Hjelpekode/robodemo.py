@@ -2,7 +2,7 @@ __author__ = 'keithd'
 
 from time import sleep
 import random
-#import imager2 as IMR
+import imager2 as IMR
 from reflectance_sensors import ReflectanceSensors
 from camera import Camera
 from motors import Motors
@@ -53,24 +53,22 @@ def random_step(motors,speed=0.25,duration=1):
 # It then rotates around, snapping pictures as it goes.  It then pastes all the pictures together into a
 # panoramo view, many of which may be created per "vacation".
 
-# def tourist(steps=25,shots=5,speed=.25):
-#     ZumoButton().wait_for_press()
-#     rs = ReflectanceSensors(); m = Motors(); c = Camera()
-#     for i in range(steps):
-#         random_step(m,speed=speed,duration=0.5)
-#         vals = rs.update()
-#         if sum(vals) < 1:  # very dark area
-#             im = shoot_panorama(c,m,shots)
-#             im.dump_image('vacation_pic'+str(i)+'.jpeg')
+def tourist(steps=25,shots=5,speed=.25):
+    ZumoButton().wait_for_press()
+    rs = ReflectanceSensors(); m = Motors(); c = Camera()
+    for i in range(steps):
+        random_step(m,speed=speed,duration=0.5)
+        vals = rs.update()
+        if sum(vals) < 1:  # very dark area
+            im = shoot_panorama(c,m,shots)
+            im.dump_image('vacation_pic'+str(i)+'.jpeg')
 
-# def shoot_panorama(camera,motors,shots=5):
-#     s = 1
-#     im = IMR.Imager(image=camera.update()).scale(s,s)
-#     rotation_time = 3/shots # At a speed of 0.5(of max), it takes about 3 seconds to rotate 360 degrees
-#     for i in range(shots-1):
-#         motors.right(0.5,rotation_time)
-#         im = im.concat_horiz(IMR.Imager(image=camera.update()))
-#     return im
-
-dancer()
+def shoot_panorama(camera,motors,shots=5):
+    s = 1
+    im = IMR.Imager(image=camera.update()).scale(s,s)
+    rotation_time = 3/shots # At a speed of 0.5(of max), it takes about 3 seconds to rotate 360 degrees
+    for i in range(shots-1):
+        motors.right(0.5,rotation_time)
+        im = im.concat_horiz(IMR.Imager(image=camera.update()))
+    return im
 
