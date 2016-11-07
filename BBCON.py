@@ -1,4 +1,4 @@
-from Arbitrator import Arbitrator
+from arbitrator import Arbitrator
 from ultrasonic import *
 
 class BBCON:
