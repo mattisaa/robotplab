@@ -102,7 +102,7 @@ class CameraSensob(Sensob):
 
         self.greatest_color_value=''
 
-        #regner ut gjennomsnittsverdien i pi
+        #regner ut gjennomsnittsverdien
         for i in range(0,image_width):
             for x in range(image_height):
                 R=image.get_pixel(i,x)
