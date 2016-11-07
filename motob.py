@@ -7,7 +7,6 @@ class Motob():
         self.motors = motors
         self.value = value
 
-<<<<<<< HEAD
     def motob_update(self, mr=None):
         if mr[0] == self.motors[0]:
             self.setMotorValue(side=0, value=mr[1])
@@ -16,11 +15,11 @@ class Motob():
         else:
             self.setMotorValue(value=mr[1])
         self.operationalize(self.value)
-=======
+
     def update(self, motor_rec):
         self.value.append(motor_rec)
         self.operationalize(motor_rec)
->>>>>>> master
+
 
     def operationalize(self, motor_rec):
         dur = motor_rec[1] * (1/120)
@@ -34,7 +33,6 @@ class Motob():
             self.motors.backward(0.5, dur)
             self.motors.left(0.5, 0.5)
 
-<<<<<<< HEAD
     def setMotorValue(self, side=None, value=None):
         # Need to convert mr-value to actualspeed of belt here
         if side == 0:
@@ -47,8 +45,6 @@ class Motob():
             self.value[0] = value
             self.value[1] = self.value[0]
 
-#hei
-=======
     def motorStop(self):
         self.motors.stop()
->>>>>>> master
+
