@@ -13,8 +13,7 @@ from imager2 import Imager
 
 class Sensob():
 
-
-
+<<<<<<< HEAD
     def update(self):
         raise NotImplementedError
 
@@ -73,8 +72,73 @@ class ReflectanceSensOb(Sensob):
         self.sensor.reset()
 
 class CameraSensob(Sensob):
+=======
+>>>>>>> master
+
+
+    def update(self):
+        raise NotImplementedError
+
+    def get_value(self):
+        raise NotImplementedError
+
+    def reset(self):
+        raise NotImplementedError
+
+
+
+class UltrasonicSensOb(Sensob):
 
     def __init__(self):
+        self.sensor=ultrasonic.Ultrasonic()
+
+    def update(self):
+        self.sensor.update()
+
+    def get_value(self):
+        return self.sensor.get_value()
+
+    def reset(self):
+        self.sensor.reset()
+
+class IrProximitySensOb(Sensob):
+
+    def __init__(self):
+        self.sensor=irproximity_sensor.IRProximitySensor()
+
+    def update(self):
+        self.sensor.update()
+
+    def get_value(self):
+        return self.sensor.get_value()
+
+    def reset(self):
+        self.sensor.reset()
+
+class ReflectanceSensOb(Sensob):
+
+
+    #her brukes max og min for å kalibrere, kan evt sette auto_calibrate til TRUE for auto-kalibrering
+    def __init__(self):
+<<<<<<< HEAD
+=======
+        self.sensor=reflectance_sensors.ReflectanceSensors(auto_calibrate=False,min_reading=100,max_reading=1000)
+        self.get_value()
+
+    def update(self):
+        self.updated_value=self.sensor.update()
+
+    def get_value(self):
+        self.value=self.sensor.get_value()
+        return self.value
+
+    def reset(self):
+        self.sensor.reset()
+
+class CameraSensob(Sensob):
+
+    def __init__(self):
+>>>>>>> master
         self.sensor=camera.Camera(img_width=128,img_height=96,img_rot=0)
 
     def update(self):

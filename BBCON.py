@@ -3,7 +3,7 @@ from ultrasonic import *
 
 class BBCON:
 
-    def __init__(self, arbitrator):
+    def __init__(self):
         self.behaviors = []
         self.active_behaviors = []
         self.sensobs = []
@@ -45,3 +45,5 @@ class BBCON:
         for sensob in self.sensobs:
             sensob.sensob_reset()
 
+    def get_active_behaviors(self):
+        return self.active_behaviors
