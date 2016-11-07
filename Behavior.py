@@ -1,6 +1,7 @@
 from BBCON import BBCON
 from sensor import CameraSensob
 
+
 class Behavior:
 
     def __init__(self):
@@ -41,6 +42,7 @@ class Behavior:
         return match_degree
 
 
+<<<<<<< HEAD
 class CameraBehaviour(Behavior):
 
     def __init__(self):
@@ -49,3 +51,5 @@ class CameraBehaviour(Behavior):
     def take_picture(self):
         color_value = self.camera_sensob.dominant_color_in_picture()
         if color_value == 'red':
+=======
+>>>>>>> master
